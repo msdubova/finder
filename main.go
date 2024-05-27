@@ -1,11 +1,7 @@
 package main
 
-import (
-	"finder/scan"
-	"fmt"
-)
+import "finder/scan"
 
 func main() {
-	fmt.Println("Hello, World!")
 	scan.Scan()
 }

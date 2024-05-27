@@ -1,12 +1,26 @@
 package scan
 
-import "fmt"
+import (
+	"bufio"
+	"fmt"
+	"os"
+)
 
-func Scan() {
-	var text string
+func Scan() []string {
+	var file, error = os.Open("File1.txt")
+	if error != nil {
+		fmt.Println("Помилка відкриття файлу")
+	}
 
-	fmt.Println("Введіть текст для пошуку")
-	fmt.Scanln(&text)
+	defer file.Close()
 
-	fmt.Printf(text)
+	var text = bufio.NewScanner(file)
+	var slice []string
+	for text.Scan() {
+		var line = text.Text()
+		slice = append(slice, line)
+	}
+	fmt.Println("Довжина зрізу:", len(slice))
+	return slice
+
 }
