@@ -6,6 +6,7 @@ import (
 )
 
 func main() {
-	scan.Scan()
-	search.Search()
+	lines := scan.Scan()
+
+	search.Search(lines)
 }

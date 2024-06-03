@@ -15,11 +15,11 @@ func Scan() []string {
 	defer file.Close()
 
 	var text = bufio.NewScanner(file)
-	var Slice []string
+	var slice []string
 	for text.Scan() {
 		var line = text.Text()
-		Slice = append(Slice, line)
+		slice = append(slice, line)
 	}
-	fmt.Println("Довжина зрізу:", len(Slice))
-	return Slice
+	fmt.Println("Довжина слайса:", len(slice))
+	return slice
 }

@@ -2,13 +2,12 @@ package search
 
 import (
 	"bufio"
-	"finder/scan"
 	"fmt"
 	"os"
 	"strings"
 )
 
-func Search() {
+func Search(text []string) {
 	var key string
 
 	fmt.Println("Який текст шукати?")
@@ -23,7 +22,7 @@ func Search() {
 
 	key = strings.TrimSpace(key)
 	fmt.Println("Ключ пошуку:", key)
-	var text = scan.Scan()
+
 	for _, line := range text {
 		if strings.Contains(strings.ToLower(line), strings.ToLower(key)) {
 			fmt.Printf("✅ Строка %v містить ключ %v\n", line, key)
